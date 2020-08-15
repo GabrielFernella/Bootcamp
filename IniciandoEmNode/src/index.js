@@ -1,8 +1,10 @@
 const express = require('express')
+const cors = require('cors')
 const { uuid, isUuid } = require('uuidv4')
 
 const app = express()
 
+app.use(cors()) //permite que qualquer front-end tenha acesso ao server, tem como configurar quando a aplicação estiver em produção
 app.use(express.json())
 
 const projects = [];
