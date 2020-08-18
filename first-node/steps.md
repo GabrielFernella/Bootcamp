@@ -4,7 +4,13 @@
  3. yarn add @types/express -D (quando o typescript n encontrar as propriedades, adicione os pacotes para type no seu projeto, assim como esse)
  4. yarn add typescript -D
  5. yarn tsc --init
+ 6. yarn add ts-node-dev -D
 
-# Processos 
+# Processos
+  1. Depois de instalar as dependencias, crie os arquivos e pastas de configurações
+  2. yarn tsc (é utilizado para fazer a build do projeto específicado no arquivo de config do vs code) (vai converter o código)
+  3. node dist/server.js
+  4. crie o scripts do package.json
+  5. gere o arquivo .editorconfig
 
 # Anotações
