@@ -5,6 +5,8 @@
  4. yarn add typescript -D
  5. yarn tsc --init
  6. yarn add ts-node-dev -D
+ 7. yarn add eslint -D
+ 8. yarn eslint --init
 
 # Processos
   1. Depois de instalar as dependencias, crie os arquivos e pastas de configurações
