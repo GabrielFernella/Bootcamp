@@ -1,4 +1,28 @@
 # Pacotes
+  1. docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres (Criar um container do postgres)
+  2.
+
+# Processos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Aulas passadas
+# Pacotes
  1. yarn init -y
  2. yarn add express
  3. yarn add @types/express -D (quando o typescript n encontrar as propriedades, adicione os pacotes para type no seu projeto, assim como esse)
