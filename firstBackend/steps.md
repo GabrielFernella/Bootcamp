@@ -1,14 +1,8 @@
 # Pacotes
-  1. docker run --name postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres (Criar um container do postgres)
-  2.
+  1. docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres (Criar um container do postgres)
+  2. yarn add typeorm pg (Instalar o ORM e o Postgres)
 
 # Processos
-
-
-
-
-
-
 
 
 
