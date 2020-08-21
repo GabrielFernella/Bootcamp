@@ -1,6 +1,9 @@
-# Pacotes
+# Pacotes e comandos
   1. docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres (Criar um container do postgres)
   2. yarn add typeorm pg (Instalar o ORM e o Postgres)
+  3. yarn add uuid
+  4. yarn typeorm migration:create -n CreateAppointments (gera o arquivo de migrations na pasta configurada)
+  5. yarn typeorm migration:run (Realiza a migration para o banco de dados )
 
 # Processos
 
