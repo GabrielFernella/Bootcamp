@@ -3,13 +3,15 @@
   2. yarn add typeorm pg (Instalar o ORM e o Postgres)
   3. yarn add uuid
   4. yarn typeorm migration:create -n CreateAppointments (gera o arquivo de migrations na pasta configurada)
-  5. yarn typeorm migration:run (Realiza a migration para o banco de dados )
+  5. yarn typeorm migration:run || yarn typeorm migration:revert (Realiza a migration para o banco de dados ) (o revert é para desfazer as migrations)
+  6. yarn add reflect-metadata
 
 # Processos
 
 
 
-
+Parei na aula -
+8 - Iniciando o Back-End do App - Parte 2 - Cadastro de Usuários
 
 
 

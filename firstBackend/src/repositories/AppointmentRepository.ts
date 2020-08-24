@@ -1,4 +1,23 @@
-import { isEqual } from 'date-fns';
+/* eslint-disable no-alert */
+import { EntityRepository, Repository } from 'typeorm';
+
+import Appointment from '../models/Appointment';
+
+@EntityRepository(Appointment) // Passando o Model
+class AppointmentsRepository extends Repository<Appointment> {
+  public async findByDate(date: Date): Promise<Appointment | null> {
+    const findAppointment = await this.findOne({
+      where: { date },
+    });
+
+    return findAppointment || null;
+  }
+}
+
+export default AppointmentsRepository;
+
+/*
+  import { isEqual } from 'date-fns';
 import Appointment from '../models/Appointment';
 
 interface CreateAppointmentDTO {
@@ -34,3 +53,5 @@ class AppointmentsRepository {
 }
 
 export default AppointmentsRepository;
+
+*/
