@@ -1,0 +1,9 @@
+Mac / Linux:
+$ cd documents 
+
+$ find . -name "node_modules" -type d -prune -exec rm -rf '{}' +
+
+Windows:
+$ cd documents 
+
+$ FOR /d /r . %d in (node_modules) DO @IF EXIST "%d" rm -rf "%d"
