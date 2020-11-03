@@ -42,8 +42,11 @@
         Esse diretório funciona como um controller na sua aplicação, ele fica responsável por toda parte lógica da sua aplicação(responsável por criar, alterar e deletar os dados da aplicação)
     Models
         Função destinada em agregar as propriedades da nossa entidades (formato dos dados)
+    Services
+        Armazenar a regra de negócio da aplicação
     Routes
         Para cada tipo de rota, deverá ter um arquivo destinado a todas as regras da quela mesma rota
+        Rota: Receber requisição, chamar outro arquivo, devolver requisição
 
     Separações de Preocupações (SoC)
         DTO - Data transfer Object
