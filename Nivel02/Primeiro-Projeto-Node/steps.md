@@ -37,3 +37,13 @@
         parseISO - Converte uma string para o tipo Date
         startOfHour - pega a a hora inicial do time passado (de 17:32 para 17:00)
         isEqual - Compara duas datas
+
+    Repositories
+        Esse diretório funciona como um controller na sua aplicação, ele fica responsável por toda parte lógica da sua aplicação(responsável por criar, alterar e deletar os dados da aplicação)
+    Models
+        Função destinada em agregar as propriedades da nossa entidades (formato dos dados)
+    Routes
+        Para cada tipo de rota, deverá ter um arquivo destinado a todas as regras da quela mesma rota
+
+    Separações de Preocupações (SoC)
+        DTO - Data transfer Object
