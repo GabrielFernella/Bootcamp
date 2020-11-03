@@ -1,4 +1,4 @@
-# Pacotes
+## Pacotes Iniciais
 
 1. yarn init -y
 2. yarn add express
@@ -6,17 +6,34 @@
 4. yarn tsc --init (arquivo de config do typescript)
 5. yarn add @types/express -D (Parte dos pacotes instalados é necessário que vc instale essa estenção de tipos para o typescript, sempre instalar como -D)
 6. yarn add ts-node-dev -D (Um nodemon para typescript)
+7. yarn add uuidv4 (lib para gerar IDs únicos)
 
-7.
-
-# Processos
+## Processos
 
 1. instalar até o quarto pacote
 2. Edite o arquivo de config do tsconfig.json e selecione a pasta principal e de distribuição
-3. Crie os scripts para startar seu projeto
+3. Crie os scripts para iniciar seu projeto
+4. Criar rotas
 
-# Anotações
+## Anotações
 
-## Gerando a build
+    Gerando a build - Para gerar a build, execute o comando 'yarn tsc'
 
-    Para gerar a build, execute o comando 'yarn tsc'
+########################################################################################################################
+
+# @@@@@ Projeto GoBarber Node @@@@@
+
+## Pacotes
+
+1. yarn add date-fns (Essa lib proporciona o tratamento de dados do tipo date)
+
+## Processos
+
+1.
+
+## Anotações
+
+    Usando o date-fns
+        parseISO - Converte uma string para o tipo Date
+        startOfHour - pega a a hora inicial do time passado (de 17:32 para 17:00)
+        isEqual - Compara duas datas
