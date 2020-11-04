@@ -43,7 +43,7 @@
     Models
         Função destinada em agregar as propriedades da nossa entidades (formato dos dados)
     Services
-        Armazenar a regra de negócio da aplicação
+        Armazenar a regra de negócio da aplicação(não tem acesso direto aos dados da requisição ou os dados da resposta)
     Routes
         Para cada tipo de rota, deverá ter um arquivo destinado a todas as regras da quela mesma rota
         Rota: Receber requisição, chamar outro arquivo, devolver requisição
