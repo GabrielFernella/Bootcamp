@@ -5,7 +5,17 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne, // tipo de relacionamento
+  JoinColumn,
 } from 'typeorm'; // Um model que será salvo no banco de dados
+
+import User from './User';
+
+/*
+  Um para um (OneToOne)
+  Um para * (OneToMany)
+  * para * (ManyToMany)
+*/
 
 @Entity('appointments') // insira o nome da tabela
 class Appointment {
@@ -13,7 +23,11 @@ class Appointment {
   id: string;
 
   @Column()
-  provider: string;
+  provider_id: string;
+
+  @ManyToOne(() => User) // Funcição de qual model o ORM precisa usar
+  @JoinColumn({ name: 'provider_id' })
+  provider: User;
 
   @Column('timestamp with time zone')
   date: Date;
