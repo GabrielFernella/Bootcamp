@@ -17,3 +17,16 @@
 5. faça a conexão entre seu Model e seu BD
 
 ## Anotações
+
+=============================================================================================================
+
+## Pacotes Iniciais
+
+1. yarn typeorm migration:create -n CreateUsers
+2. yarn typeorm migration:run
+
+## Processos
+
+1. Crie seu container docker com o Postgres
+
+## Anotações
