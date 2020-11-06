@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import 'reflect-metadata'; // precisa desse recurso do TypeORM
 
 import express from 'express';
 import routes from './routes';
