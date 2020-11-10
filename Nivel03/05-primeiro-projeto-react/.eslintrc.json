@@ -28,6 +28,13 @@
     "prettier/prettier": "error",
     "no-use-before-define": "off",
     "@typescript-eslint/ban-types": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
