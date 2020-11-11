@@ -4,12 +4,12 @@
     "package-lock.json": true,
     "public": true,
     ".gitattributes": true,
-    ".gitignore": true,
+    //".gitignore": true,
     "yarn.lock": true,
-    ".editorconfig": true,
+    //".editorconfig": true,
     ".eslintignore": true,
-    ".eslintrc.js": true,
-    ".prettierrc": true,
-    "prettier.config.js": true
+    ".eslintrc.js": true
+    //".prettierrc": true,
+    //"prettier.config.js": true
   }
 }
