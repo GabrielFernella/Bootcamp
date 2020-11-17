@@ -9,4 +9,9 @@
 
 ## process
 
+1. Cria a estrutura de pastas simples do projeto
+2. Configure o editor
+3. Crie a estrutura HTML da sua página
+4. Crie seus respectivos styles com o styled-component
+
 ## Anotações
