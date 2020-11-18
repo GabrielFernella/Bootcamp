@@ -9,7 +9,7 @@ import { IconBaseProps } from 'react-icons'; //Passando as propriedades dos íco
 import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
-import Tooltip from '../../components/Tooltip';
+//import Tooltip from '../../components/Tooltip';
 
 import { Container, Error } from './styles';
 

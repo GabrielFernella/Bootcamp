@@ -7,6 +7,7 @@
 5. yarn typeorm migration:run (Rodar as migrations disponíveis)
 6. yarn typeorm migration:revert (só pode alterar uma migration se ela não foi enviada para o sistema)
 7. yarn typeorm migration:show (visualizar todas as migrations)
+8. yarn add cors && yarn add @types/cors -D (Para autorizar a conexão entre a API e Frontend)
 
 ## Processos
 
