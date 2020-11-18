@@ -15,6 +15,6 @@
 3. Crie a estrutura HTML da sua página
 4. Crie seus respectivos styles com o styled-component
 
-parei em (Autenticação)
+parei em (Mensagens de toast)
 
 ## Anotações
