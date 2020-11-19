@@ -1,5 +1,5 @@
 // Trabalha com os dados (Listar,Altear,Deletar..)
-import { EntityRepository, Repository } from 'typeorm';
+import { EntityRepository, Repository } from 'typeorm'; // Faz uma relação entre o repositório e o model
 
 import Appointment from '../models/Appointment';
 

@@ -1,4 +1,4 @@
-import 'reflect-metadata'; // precisa desse recurso do TypeORM
+import 'reflect-metadata'; // precisa desse recurso do TypeORM para entender algumas sintaxe
 
 import express, { Request, Response, NextFunction } from 'express';
 import 'express-async-errors';

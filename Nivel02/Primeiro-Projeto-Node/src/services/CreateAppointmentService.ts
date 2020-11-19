@@ -1,5 +1,5 @@
 import { startOfHour } from 'date-fns';
-import { getCustomRepository } from 'typeorm';
+import { getCustomRepository } from 'typeorm'; // Pega as propriedades do repository
 
 import AppError from '../errors/AppError';
 
@@ -8,7 +8,7 @@ import AppointmentsRepository from '../repositories/AppointmentRepository';
 
 /*
 Recebimento das informações
-Tratativas de erros/excessões
+Tratativas de erros/ excessões
 Acesso ao Repositório
 */
 
@@ -20,11 +20,13 @@ interface Request {
 
 class CreateAppointmentService {
   public async execute({ provider_id, date }: Request): Promise<Appointment> {
+    // appointmentsRepository agora possui todos os métodos de repository, a partir daí podemos manipular os dados para o banco
     const appointmentsRepository = getCustomRepository(AppointmentsRepository);
+
+    // Pegando o valor inicial da hora
     const appointmentDate = startOfHour(date);
 
     // Verifica se já tem algum appointment para esse horário
-    // this.appointmentRepository se refere ao private appointmentRepository
     const findAppointmentInSameDate = await appointmentsRepository.findByDate(
       appointmentDate,
     );
@@ -33,11 +35,12 @@ class CreateAppointmentService {
     }
 
     const appointment = appointmentsRepository.create({
+      // Passa os valores para a memória
       provider_id,
       date: appointmentDate,
     });
 
-    await appointmentsRepository.save(appointment);
+    await appointmentsRepository.save(appointment); // Efetiva a inserção no banco de dados
 
     return appointment;
   }

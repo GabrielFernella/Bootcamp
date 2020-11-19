@@ -25,6 +25,7 @@ class Appointment {
   @Column()
   provider_id: string;
 
+  // Passando o relacionamento
   @ManyToOne(() => User) // Funcição de qual model o ORM precisa usar
   @JoinColumn({ name: 'provider_id' })
   provider: User;
