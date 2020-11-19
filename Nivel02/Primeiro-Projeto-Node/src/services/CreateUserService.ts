@@ -22,6 +22,7 @@ class CreateUserService {
       throw new AppError('Email address already in used', 400);
     }
 
+    // Criando senha criptografada
     const hashedPassword = await hash(password, 8);
 
     // Cria o usuário na memoria

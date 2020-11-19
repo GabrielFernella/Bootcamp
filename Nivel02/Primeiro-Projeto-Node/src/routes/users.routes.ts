@@ -18,6 +18,7 @@ usersRouter.post('/', async (request, response) => {
   const createUser = new CreateUserService();
   const user = await createUser.execute({ name, email, password });
 
+  // Retornando o usuário sem a senha
   const userWithoutPassword = {
     id: user.id,
     name: user.name,
