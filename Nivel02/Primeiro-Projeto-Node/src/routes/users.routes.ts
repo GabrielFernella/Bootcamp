@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import multer from 'multer'; // tratativa de arquivos de imagens do avatar
 
-import uploadConfig from '../config/upload';
+import uploadConfig from '../config/upload'; // importando as configurações de upload
 
 import CreateUserService from '../services/CreateUserService';
 import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
 
-import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+import ensureAuthenticated from '../middlewares/ensureAuthenticated'; // verificar se está autenticado
 
 const usersRouter = Router();
 const upload = multer(uploadConfig);
@@ -32,16 +32,18 @@ usersRouter.post('/', async (request, response) => {
 
 usersRouter.patch(
   '/avatar',
-  ensureAuthenticated,
-  upload.single('avatar'),
+  ensureAuthenticated, // middleware de autenticação
+  upload.single('avatar'), // middleware de upload de arquivo passando o nome do campo
   async (request, response) => {
-    const updateUserAvatar = new UpdateUserAvatarService();
+    const updateUserAvatar = new UpdateUserAvatarService(); // instanciando o service
 
+    // Pegando os dados retornados do service
     const user = await updateUserAvatar.execute({
       user_id: request.user.id,
-      avatarFilename: request.file.filename,
+      avatarFilename: request.file.filename, // nome do arquivo
     });
 
+    // Retornando o objeto User sem a senha
     const userWithoutPassword = {
       id: user.id,
       name: user.name,

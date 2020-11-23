@@ -1,13 +1,13 @@
 import 'reflect-metadata'; // precisa desse recurso do TypeORM para entender algumas sintaxe
 
-import express, { Request, Response, NextFunction } from 'express';
-import 'express-async-errors';
+import express, { Request, Response, NextFunction } from 'express'; // Utilizando no middleware de erros
+import 'express-async-errors'; // para que nosso middleware de erros entenda métodos async
 import cors from 'cors';
 
 import AppError from './errors/AppError';
 import routes from './routes';
 
-import uploadConfig from './config/upload';
+import uploadConfig from './config/upload'; // Configurações de upload
 import './database';
 
 const app = express();
@@ -18,6 +18,7 @@ app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
 
 // As tratativas de erros devem ser declaradas depois das rotas
+// Middleware de tratativas de erros
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   // se o erro veio da tratativa de erros da minha aplicação
   if (err instanceof AppError) {
@@ -27,8 +28,9 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     });
   }
 
-  console.log(err);
+  console.error(err);
 
+  // erro interno (erro não reconhecido)
   return response.status(500).json({
     status: 'error',
     message: `Internal server Error: ${err.message}`,
