@@ -8,6 +8,7 @@
 6. yarn add yup && yarn add @types/yup -D (Biblioteca para validação )
 7. yarn add axios (Para fazer comunicação com o back-end)
 8. yarn add uuidv4
+9. yarn add react-spring
 
 ## process
 
