@@ -1,15 +1,15 @@
 import React, { useCallback, useRef } from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
-import { FormHandles } from '@unform/core';
-import { Form } from '@unform/web';
-import * as Yup from 'yup';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi'; //Importação de ícones
+import { FormHandles } from '@unform/core'; //Método de submit de formulário diferente
+import { Form } from '@unform/web'; //Método de submit de formulário diferente
+import * as Yup from 'yup'; //Usado para validação de schema
 
 import { useAuth } from '../../hooks/AuthContext';
 import getValidationErrors from '../../utils/getValidationErrors';
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.svg'; //importando Logo
 
-//Componentes
+//Componentes utilizados
 import Input from '../../components/Imput';
 import Button from '../../components/Button';
 

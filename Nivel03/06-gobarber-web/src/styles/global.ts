@@ -1,3 +1,4 @@
+// Estilos Globais, esse CSS é adicionado para todos os componentes e páginas da aplicação
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`

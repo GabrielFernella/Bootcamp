@@ -1,7 +1,7 @@
 import React from 'react';
 
-import GlobalStyle from './styles/global';
-import SignIn from './pages/SignIn';
+import GlobalStyle from './styles/global'; //Importando os estilos globais
+import SignIn from './pages/SignIn'; // Importando tela
 //import SignUp from './pages/SignUp';
 
 import { AuthProvider } from './hooks/AuthContext';
