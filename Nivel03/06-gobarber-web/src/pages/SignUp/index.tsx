@@ -1,9 +1,9 @@
 import React, { useCallback, useRef } from 'react';
 import { FiArrowLeft, FiMail, FiLock, FiUser } from 'react-icons/fi';
-import { FormHandles } from '@unform/core';
+import { FormHandles } from '@unform/core'; //interface que possui as tipagens dos formulários
 import { Form } from '@unform/web';
-import * as Yup from 'yup';
-import getValidationErrors from '../../utils/getValidationErrors';
+import * as Yup from 'yup'; //Validação
+import getValidationErrors from '../../utils/getValidationErrors'; // Valida os erros do input
 
 import logo from '../../assets/logo.svg';
 
@@ -14,7 +14,7 @@ import Button from '../../components/Button';
 import { Container, Content, Background } from './styles';
 
 const SignUp: React.FC = () => {
-  const formRef = useRef<FormHandles>(null);
+  const formRef = useRef<FormHandles>(null); //Referenciando o Formulário
 
   // Validando os campos do Imput
   const handleSubmit = useCallback(async (data: object) => {

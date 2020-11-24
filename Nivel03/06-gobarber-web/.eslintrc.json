@@ -26,8 +26,8 @@
   "rules": {
     "camelcase": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/jsx-props-no-spreading": "off",
-    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off", // não precisa declarar cada props
+    "react/prop-types": "off", //desabilita a parte de tipagem dos atributos de props
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "no-unused-expressions": "off",

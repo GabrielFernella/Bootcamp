@@ -18,7 +18,7 @@ export const Content = styled.div`
   place-content: center; /*Alinha tudo no centro*/
 
   width: 100%;
-  max-width: 700px;
+  max-width: 700px; /*Limitando o tamanho */
 
   form {
     margin: 80px 0;
@@ -65,6 +65,6 @@ export const Content = styled.div`
 export const Background = styled.div`
   flex: 1; /*Ocupa todo o espaço, menos o do container ao lado*/
 
-  background: url(${signInBackgroundImg}) no-repeat center;
+  background: url(${signInBackgroundImg}) no-repeat center; /*Imagem */
   background-size: cover; /*Faz a imagem ocupar todo o espaço*/
 `;
