@@ -4,16 +4,13 @@ import GlobalStyle from './styles/global'; //Importando os estilos globais
 import SignIn from './pages/SignIn'; // Importando tela
 //import SignUp from './pages/SignUp';
 
-import ToastContainer from './components/ToastContainer';
-import { AuthProvider } from './hooks/AuthContext';
+import AppProvider from './hooks/index'; //Hooks que está agregando diversos outros hooks
 
 const App: React.FC = () => (
   <>
-    <AuthProvider>
+    <AppProvider>
       <SignIn />
-    </AuthProvider>
-
-    <ToastContainer />
+    </AppProvider>
 
     <GlobalStyle />
   </>

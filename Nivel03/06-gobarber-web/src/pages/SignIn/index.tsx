@@ -4,7 +4,8 @@ import { FormHandles } from '@unform/core'; //Método de submit de formulário d
 import { Form } from '@unform/web'; //Método de submit de formulário diferente
 import * as Yup from 'yup'; //Usado para validação de schema
 
-import { useAuth } from '../../hooks/AuthContext';
+import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import logo from '../../assets/logo.svg'; //importando Logo
@@ -24,6 +25,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
+  const { addToast } = useToast();
 
   // Validando os campos do Imput
   const handleSubmit = useCallback(
@@ -42,7 +44,7 @@ const SignIn: React.FC = () => {
           abortEarly: false, // permite que vc retorne todos os erros de uma vez só
         });
 
-        signIn({
+        await signIn({
           email: data.email,
           password: data.password,
         });
@@ -54,9 +56,14 @@ const SignIn: React.FC = () => {
         }
 
         //Disparar um Toast
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação',
+          description: 'Ocorreu um erro ao fazer login, cheque as credenciais',
+        });
       }
     },
-    [signIn],
+    [signIn, addToast],
   );
 
   return (
