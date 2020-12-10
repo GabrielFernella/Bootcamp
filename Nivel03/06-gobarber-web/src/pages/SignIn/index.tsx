@@ -3,6 +3,7 @@ import { FiLogIn, FiMail, FiLock } from 'react-icons/fi'; //Importação de íco
 import { FormHandles } from '@unform/core'; //Método de submit de formulário diferente
 import { Form } from '@unform/web'; //Método de submit de formulário diferente
 import * as Yup from 'yup'; //Usado para validação de schema
+import { Link } from 'react-router-dom'; //Trabalhando com rotas
 
 import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
@@ -14,7 +15,7 @@ import logo from '../../assets/logo.svg'; //importando Logo
 import Input from '../../components/Imput';
 import Button from '../../components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 interface SignInFormData {
   email: string;
@@ -53,6 +54,8 @@ const SignIn: React.FC = () => {
           const errors = getValidationErrors(err);
 
           formRef.current?.setErrors(errors);
+
+          return;
         }
 
         //Disparar um Toast
@@ -70,32 +73,34 @@ const SignIn: React.FC = () => {
     <>
       <Container>
         <Content>
-          <img src={logo} alt="GoBarber" />
+          <AnimationContainer>
+            <img src={logo} alt="GoBarber" />
 
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu logon</h1>
-            <Input
-              name="email"
-              icon={FiMail}
-              type="text"
-              placeholder="E-mail"
-            />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Senha"
-            />
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              <h1>Faça seu logon</h1>
+              <Input
+                name="email"
+                icon={FiMail}
+                type="text"
+                placeholder="E-mail"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha"
+              />
 
-            <Button type="submit">Entrar</Button>
+              <Button type="submit">Entrar</Button>
 
-            <a href="forgot">Esqueci minha senha</a>
-          </Form>
+              <a href="forgot">Esqueci minha senha</a>
+            </Form>
 
-          <a href="login">
-            <FiLogIn />
-            Criar conta
-          </a>
+            <Link to="/signup">
+              <FiLogIn />
+              Criar conta
+            </Link>
+          </AnimationContainer>
         </Content>
 
         <Background />

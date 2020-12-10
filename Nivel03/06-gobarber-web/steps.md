@@ -9,6 +9,7 @@
 7. yarn add axios (Para fazer comunicação com o back-end)
 8. yarn add uuidv4
 9. yarn add react-spring
+10. yarn add react-router-dom && yarn add @types/react-router-dom -D
 
 ## process
 

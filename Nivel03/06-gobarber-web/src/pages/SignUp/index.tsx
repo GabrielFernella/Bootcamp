@@ -4,6 +4,7 @@ import { FormHandles } from '@unform/core'; //interface que possui as tipagens d
 import { Form } from '@unform/web';
 import * as Yup from 'yup'; //Validação
 import getValidationErrors from '../../utils/getValidationErrors'; // Valida os erros do input
+import { Link } from 'react-router-dom'; //Trabalhando com rotas
 
 import logo from '../../assets/logo.svg';
 
@@ -11,7 +12,7 @@ import logo from '../../assets/logo.svg';
 import Input from '../../components/Imput';
 import Button from '../../components/Button';
 
-import { Container, Content, Background } from './styles';
+import { Container, Content, AnimationContainer, Background } from './styles';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null); //Referenciando o Formulário
@@ -45,31 +46,33 @@ const SignUp: React.FC = () => {
         <Background />
 
         <Content>
-          <img src={logo} alt="GoBarber" />
+          <AnimationContainer>
+            <img src={logo} alt="GoBarber" />
 
-          <Form ref={formRef} onSubmit={handleSubmit}>
-            <h1>Faça seu Cadastro</h1>
-            <Input name="name" icon={FiUser} type="text" placeholder="Nome" />
-            <Input
-              name="email"
-              icon={FiMail}
-              type="text"
-              placeholder="E-mail"
-            />
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Senha"
-            />
+            <Form ref={formRef} onSubmit={handleSubmit}>
+              <h1>Faça seu Cadastro</h1>
+              <Input name="name" icon={FiUser} type="text" placeholder="Nome" />
+              <Input
+                name="email"
+                icon={FiMail}
+                type="text"
+                placeholder="E-mail"
+              />
+              <Input
+                name="password"
+                icon={FiLock}
+                type="password"
+                placeholder="Senha"
+              />
 
-            <Button type="submit">Cadastrar</Button>
-          </Form>
+              <Button type="submit">Cadastrar</Button>
+            </Form>
 
-          <a href="login">
-            <FiArrowLeft />
-            Voltar para logon
-          </a>
+            <Link to="/">
+              <FiArrowLeft />
+              Voltar para logon
+            </Link>
+          </AnimationContainer>
         </Content>
       </Container>
     </>
