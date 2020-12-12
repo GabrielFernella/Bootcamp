@@ -1,7 +1,7 @@
 Pacotes
 
 1. npx react-native init appgobarber --template react-native-template-typescript (Criando projeto)
-2. teste
+2. yarn add styled-components && yarn add @types/styled-components -D
 
 Processos
 
