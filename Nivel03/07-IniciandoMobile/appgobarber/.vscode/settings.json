@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "android": true,
+    "assets": true,
+    "ios": true,
+    "prettier.config.js": true,
+    ".gitignore": true,
+    "yarn.lock": true,
+    "metro.config.js": true,
+    "babel.config.js": true,
+    "react-native.config.js": true,
+    ".watchmanconfig": true,
+    ".flowconfig": true,
+    ".eslintrc.json": true,
+    ".eslintignore": true,
+    ".editorconfig": true,
+    ".gitattributes": true,
+    ".buckconfig": true,
+    "__tests__": true
+  }
+}
