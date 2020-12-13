@@ -8,8 +8,9 @@ Pacotes
 6. yarn react-native link (importando os assets do projeto)
 7. yarn add react-native-vector-icons (instalando icones) e incremente um código nos arquivos tanto de IOS quanto Android
 8. yarn add -D @types/react-native-vector-icons
+9. yarn add react-native-iphone-x-helper
 
-9.
+10.
 
 Processos
 
