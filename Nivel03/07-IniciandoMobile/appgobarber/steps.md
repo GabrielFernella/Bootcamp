@@ -8,9 +8,10 @@ Pacotes
 6. yarn react-native link (importando os assets do projeto)
 7. yarn add react-native-vector-icons (instalando icones) e incremente um código nos arquivos tanto de IOS quanto Android
 8. yarn add -D @types/react-native-vector-icons
-9. yarn add react-native-iphone-x-helper
+9. yarn add react-native-iphone-x-helper (instancia algumas propriedades para ios, assim pegamos tamanhos e etc)
+10. yarn add @unform/core @unform/mobile
 
-10.
+11.
 
 Processos
 
@@ -25,3 +26,7 @@ Processos
    iconFontNames: ['Feather.ttf']
    ]
    aply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+### Error
+
+na parte de unform
