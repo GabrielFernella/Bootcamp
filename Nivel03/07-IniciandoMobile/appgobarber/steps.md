@@ -12,8 +12,9 @@ Pacotes
 10. yarn add -D @types/react-native-vector-icons
 11. yarn add react-native-iphone-x-helper (instancia algumas propriedades para ios, assim pegamos tamanhos e etc)
 12. yarn add @unform/core @unform/mobile
-
-13.
+13. yarn add yup && yarn add @types/yup -D
+14. yarn add axios
+15. yarn add @react-native-community/async-storage ()
 
 Processos
 
