@@ -1,17 +1,19 @@
 Pacotes
 
-1. npx react-native init appgobarber --template react-native-template-typescript (Criando projeto)
-2. yarn add styled-components && yarn add @types/styled-components -D
-3. yarn add @react-navigation/native
-4. yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
-5. yarn add @react-navigation/stack
-6. yarn react-native link (importando os assets do projeto)
-7. yarn add react-native-vector-icons (instalando icones) e incremente um código nos arquivos tanto de IOS quanto Android
-8. yarn add -D @types/react-native-vector-icons
-9. yarn add react-native-iphone-x-helper (instancia algumas propriedades para ios, assim pegamos tamanhos e etc)
-10. yarn add @unform/core @unform/mobile
+1. yarn run android (executar pela primeira vez na VM)
+2. yarn start (iniciar projeto)
+3. npx react-native init appgobarber --template react-native-template-typescript (Criando projeto)
+4. yarn add styled-components && yarn add @types/styled-components -D
+5. yarn add @react-navigation/native
+6. yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+7. yarn add @react-navigation/stack
+8. yarn react-native link (importando os assets do projeto)
+9. yarn add react-native-vector-icons (instalando icones) e incremente um código nos arquivos tanto de IOS quanto Android
+10. yarn add -D @types/react-native-vector-icons
+11. yarn add react-native-iphone-x-helper (instancia algumas propriedades para ios, assim pegamos tamanhos e etc)
+12. yarn add @unform/core @unform/mobile
 
-11.
+13.
 
 Processos
 

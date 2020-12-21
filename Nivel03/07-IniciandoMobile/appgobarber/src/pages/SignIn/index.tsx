@@ -15,8 +15,8 @@ import { Form } from '@unform/mobile';
 import { FormHandles } from '@unform/core';
 
 // Components
-import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Input from '../../components/Input';
 import logoImg from '../../assets/logo.png';
 
 import {
