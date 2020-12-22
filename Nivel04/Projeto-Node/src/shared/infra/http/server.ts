@@ -4,11 +4,11 @@ import express, { Request, Response, NextFunction } from 'express'; // Utilizand
 import 'express-async-errors'; // para que nosso middleware de erros entenda métodos async
 import cors from 'cors';
 
-import AppError from './errors/AppError';
+import uploadConfig from '@config/upload'; // Configurações de upload
+import AppError from '@shared/errors/AppError';
 import routes from './routes';
 
-import uploadConfig from './config/upload'; // Configurações de upload
-import './database';
+import '@shared/infra/typeorm';
 
 const app = express();
 

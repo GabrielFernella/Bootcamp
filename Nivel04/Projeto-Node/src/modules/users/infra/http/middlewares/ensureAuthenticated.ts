@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express'; // funções de middleware
 import { verify } from 'jsonwebtoken'; // ()verificar o token
-import authConfig from '../config/auth'; // arquivo de configuração de auth
+import authConfig from '@config/auth'; // arquivo de configuração de auth
 
-import AppError from '../errors/AppError';
+import AppError from '@shared/errors/AppError';
 
 interface TokenPayload {
   iat: number;

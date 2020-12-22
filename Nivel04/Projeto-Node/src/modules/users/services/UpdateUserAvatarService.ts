@@ -2,10 +2,10 @@ import { getRepository } from 'typeorm';
 import path from 'path';
 import fs from 'fs';
 
-import AppError from '../errors/AppError'; // Tratativas de erros
+import AppError from '@shared/errors/AppError'; // Tratativas de erros
 
-import User from '../models/User'; // Model de User
-import uploadConfig from '../config/upload'; // Configurações do upload
+import User from '@modules/users/infra/typeorm/entities/User'; // Model de User
+import uploadConfig from '@config/upload'; // Configurações do upload
 
 interface Request {
   user_id: string;

@@ -6,7 +6,7 @@
   "password": "postgres",
   "database": "gostack_gobarber",
   "entities": ["./src/models/*.ts"],
-  "migrations": ["./src/database/migrations/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
   "cli": {
     "migrationsDir": "./src/database/migrations"
   }

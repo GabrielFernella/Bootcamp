@@ -1,7 +1,7 @@
 // Trabalha com os dados (Listar,Altear,Deletar..)
 import { EntityRepository, Repository } from 'typeorm'; // Faz uma relação entre o repositório e o model
 
-import Appointment from '../models/Appointment';
+import Appointment from '../infra/typeorm/entities/Appointment';
 
 @EntityRepository(Appointment) // Passar como parâmetro o model
 class AppointmentsRepository extends Repository<Appointment> {

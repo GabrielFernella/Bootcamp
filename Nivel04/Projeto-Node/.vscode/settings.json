@@ -1,7 +1,7 @@
 {
   "files.exclude": {
     "node_modules": true,
-    "tools": true,
+    //"tools": true,
     "package-lock.json": true,
     "public": true,
     ".gitattributes": true,

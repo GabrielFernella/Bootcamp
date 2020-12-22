@@ -1,11 +1,11 @@
 import { getRepository } from 'typeorm'; // para conseguirmos manipular informações do repository
 import { compare } from 'bcryptjs'; // funções do bcrypt (Compara uma senha criptografada com uma não criptografada)
 import { sign } from 'jsonwebtoken'; //
-import authConfig from '../config/auth'; // Configurações de autenticação
+import authConfig from '@config/auth'; // Configurações de autenticação
 
-import AppError from '../errors/AppError'; // Tratativas de erros
+import AppError from '@shared/errors/AppError'; // Tratativas de erros
 
-import User from '../models/User'; // passando o repository para buscar info do models
+import User from '@modules/users/infra/typeorm/entities/User'; // passando o repository para buscar info do models
 
 interface Request {
   email: string;

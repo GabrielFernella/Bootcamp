@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import multer from 'multer'; // tratativa de arquivos de imagens do avatar
 
-import uploadConfig from '../config/upload'; // importando as configurações de upload
+import uploadConfig from '@config/upload'; // importando as configurações de upload
 
-import CreateUserService from '../services/CreateUserService';
-import UpdateUserAvatarService from '../services/UpdateUserAvatarService';
+import CreateUserService from '@modules/users/services/CreateUserService';
+import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
 
-import ensureAuthenticated from '../middlewares/ensureAuthenticated'; // verificar se está autenticado
+import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated'; // verificar se está autenticado
 
 const usersRouter = Router();
 const upload = multer(uploadConfig);

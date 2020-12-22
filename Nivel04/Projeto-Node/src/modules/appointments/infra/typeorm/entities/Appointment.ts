@@ -9,7 +9,7 @@ import {
   JoinColumn,
 } from 'typeorm'; // Um model que será salvo no banco de dados
 
-import User from './User';
+import User from '@modules/users/infra/typeorm/entities/User';
 
 /*
   Um para um (OneToOne)
