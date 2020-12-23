@@ -1,29 +1,35 @@
-import { getRepository } from 'typeorm'; // para conseguirmos manipular informações do repository
 import { compare } from 'bcryptjs'; // funções do bcrypt (Compara uma senha criptografada com uma não criptografada)
 import { sign } from 'jsonwebtoken'; //
 import authConfig from '@config/auth'; // Configurações de autenticação
+import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError'; // Tratativas de erros
 
 import User from '@modules/users/infra/typeorm/entities/User'; // passando o repository para buscar info do models
 
-interface Request {
+import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+
+interface IRequest {
   email: string;
   password: string;
 }
 
 // Interface que está sendo retornada
-interface Response {
+interface IResponse {
   user: User;
   token: string;
 }
 
+@injectable()
 class AuthenticateUserService {
-  public async execute({ email, password }: Request): Promise<Response> {
-    const usersRepository = getRepository(User);
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+  ) {}
 
+  public async execute({ email, password }: IRequest): Promise<IResponse> {
     // Procurando um usuário que bate com o email
-    const user = await usersRepository.findOne({ where: { email } });
+    const user = await this.usersRepository.findByEmail(email);
     if (!user) {
       throw new AppError('Incorrect email/password combination', 401);
     }

@@ -3,6 +3,7 @@
 ## Pacotes Iniciais
 
 1. yarn add tsconfig-paths -D
+2. yarn add tsyringe (Utilizada para injeção de dependência )
 
 =============================================================================================================
 
@@ -11,6 +12,8 @@
 1. Edite o arquivo de tsconfig.json para criar as variáveis de path
 2. Estruturando a aplicação utilizando metodologia DDD e TDD
 3. A aplicação fica dividida em três seguimentos
+
+4.
 
 =============================================================================================================
 

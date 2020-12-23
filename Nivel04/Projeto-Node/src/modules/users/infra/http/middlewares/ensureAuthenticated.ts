@@ -4,7 +4,7 @@ import authConfig from '@config/auth'; // arquivo de configuração de auth
 
 import AppError from '@shared/errors/AppError';
 
-interface TokenPayload {
+interface ITokenPayload {
   iat: number;
   exp: number;
   sub: string;
@@ -27,7 +27,7 @@ export default function ensureAuthenticated(
   try {
     const decoded = verify(token, authConfig.jwt.secret);
 
-    const { sub } = decoded as TokenPayload; // forçando a declaração de tipos
+    const { sub } = decoded as ITokenPayload; // forçando a declaração de tipos
     // Essa request está em @types, onde fizemos um override de tipos, inserindo um novo valor ao request
     request.user = {
       id: sub,
