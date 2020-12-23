@@ -24,3 +24,12 @@
 @config - Armazena todos os aquivos de configuração
 @modules - Contém toda regra de negócio da aplicação, dividimos o mesmo por domínio, onde cada domínio é responsável por determinado assunto no sistema, ou seja, um não depende do outro para funcionar.
 @shared - Nesse diretório deixaremos toda parte de ferramentas que utilizamos no projeto, como nosso ORM, arquivo de rotas principal, arquivo do server e etc
+
+### Estrutura de Pastas
+
+config/
+files - Arquivos de configuração
+
+modules/
+
+shared/
