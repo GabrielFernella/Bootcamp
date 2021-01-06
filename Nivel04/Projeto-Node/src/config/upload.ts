@@ -5,7 +5,8 @@ import path from 'path';
 const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp'); // caminho dos arquivos
 
 export default {
-  directory: tmpFolder, // expondo o caminho através de um serviço
+  tmpFolder,
+  uploadsFolder: path.resolve(tmpFolder, 'uploads'),
 
   storage: multer.diskStorage({
     destination: tmpFolder, // Destino dos arquivos
