@@ -8,6 +8,7 @@ import Appointment from '@modules/appointments/infra/typeorm/entities/Appointmen
 import IAppointmentsRepository from '../IAppointmentsRepository';
 
 class AppointmentsRepository implements IAppointmentsRepository {
+  // ao invés de banco de dados, usamos um array para armazenar os dados
   private appointments: Appointment[] = [];
 
   // Métodos

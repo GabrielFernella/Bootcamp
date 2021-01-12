@@ -1,5 +1,6 @@
 {
   "env": {
+    //formas de definir variáveis globais
     "es2020": true,
     "node": true,
     "jest": true
@@ -17,6 +18,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
+    "import/no-unresolved": "off",
     "prettier/prettier": "error",
     "no-useless-constructor": "off",
     "@typescript-eslint/camelcase": "off",

@@ -19,9 +19,10 @@ interface IRequest {
 
 @injectable()
 class CreateAppointmentService {
+  // Através de injeção de dependência enviamos nosso ApppoinrmentRepository do typeorm, assim podemos ter as funções criadas para utilizarmos aqui
   constructor(
     @inject('AppointmentRepository')
-    private appointmentsRepository: IAppointmentsRepository,
+    private appointmentsRepository: IAppointmentsRepository, // importamos essa interface para termos uma noção dos métodos contidos na classe AppointmentsRepository
   ) {}
 
   public async execute({ provider_id, date }: IRequest): Promise<Appointment> {

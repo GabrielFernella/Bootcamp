@@ -8,6 +8,7 @@ import User from '@modules/users/infra/typeorm/entities/User'; // Model de User
 import uploadConfig from '@config/upload'; // Configurações do upload
 
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 
 interface IRequest {
   user_id: string;
@@ -19,6 +20,9 @@ class UpdateUserAvatarService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+
+    @inject('StorageProvider')
+    private storageProvider: IStorageProvider,
   ) {}
 
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
@@ -29,18 +33,14 @@ class UpdateUserAvatarService {
     }
 
     if (user.avatar) {
-      // Deletar avatar anterior
-      const userAvatarFilePath = path.join(uploadConfig.directory, user.avatar); // path.join junta os dois caminhos
-
-      const userAvatarFileExists = await fs.promises.stat(userAvatarFilePath); // Verifica o status do arquivo, assim saberemos se existe
-      if (userAvatarFileExists) {
-        await fs.promises.unlink(userAvatarFilePath); // desfaz o caminho
-      }
+      await this.storageProvider.deleteFile(user.avatar); // deletando o arquivo caso exista
     }
 
+    const fileName = await this.storageProvider.saveFile(avatarFilename); // salvando o arquivo
+
     // Passando novo avatar para o user
-    user.avatar = avatarFilename;
-    await this.usersRepository.save(user);
+    user.avatar = fileName;
+    await this.usersRepository.save(user); // salvando o caminho do arquivo
 
     return user;
   }

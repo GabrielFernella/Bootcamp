@@ -1,12 +1,16 @@
+// Nesse arquivo criamos todos os nossos testes, Criamos nossa categoria e os testes unitários para nossa validação
+
 import 'reflect-metadata';
 
-import AppError from '@shared/errors/AppError';
+import AppError from '@shared/errors/AppError'; // Arquivo de tratativa de erros
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import CreateAppointmentService from './CreateAppointmentService';
+import CreateAppointmentService from './CreateAppointmentService'; // Importamos nosso arquivo de Services para que possamos buscar nossos services
 
+// describe cria uma categoria de testes
 describe('CreateAppointment', () => {
+  // it === test
   it('should be able to create a new appointment', async () => {
-    const fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    const fakeAppointmentsRepository = new FakeAppointmentsRepository(); // utilize o fakeRepository e passe para o contructor
     const createAppointment = new CreateAppointmentService(
       fakeAppointmentsRepository,
     );
@@ -38,5 +42,6 @@ describe('CreateAppointment', () => {
         provider_id: '123456',
       }),
     ).rejects.toBeInstanceOf(AppError);
+    // espera que o resultado seja uma instancia de AppError
   });
 });
