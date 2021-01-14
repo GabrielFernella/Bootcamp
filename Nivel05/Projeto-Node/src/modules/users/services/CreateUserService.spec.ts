@@ -39,7 +39,7 @@ describe('CreateUser', () => {
     });
 
     // espera que user tenha um id
-    expect(
+    await expect(
       createUser.execute({
         name: 'John Doe',
         email: 'johndoe@exemple.com',
