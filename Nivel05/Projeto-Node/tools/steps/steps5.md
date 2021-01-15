@@ -1,6 +1,6 @@
 # Anotações
 
-- Envio de emails
+- Envio de emails 18min
 
 ## Pacotes Iniciais
 
