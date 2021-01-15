@@ -1,7 +1,5 @@
-// Trabalha com os dados (Listar,Altear,Deletar..)
-import { getRepository, Repository } from 'typeorm'; // Faz uma relação entre o repositório e o model
+import { getRepository, Repository } from 'typeorm';
 
-// Importando a interface para averiguar quais métodos precisam ser criados
 import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
 
 import UserToken from '../entities/UserToken';

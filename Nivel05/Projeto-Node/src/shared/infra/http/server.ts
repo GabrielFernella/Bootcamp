@@ -15,7 +15,7 @@ const app = express();
 
 app.use(cors()); // permite a conexão autorizada entre nosso frontend
 app.use(express.json());
-app.use('/files', express.static(uploadConfig.directory));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 // As tratativas de erros devem ser declaradas depois das rotas

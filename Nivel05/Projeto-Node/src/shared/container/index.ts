@@ -2,7 +2,7 @@
 
 import { container } from 'tsyringe';
 
-import '@models/users/providers'; // alterado no eslint
+import '@modules/users/providers'; // alterado no eslint
 import './providers';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
