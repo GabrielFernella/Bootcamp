@@ -43,14 +43,6 @@ describe('AuthenticateUser', () => {
   });
 
   it('should not be able to authenticate with non existing user', async () => {
-    const fakeUsersRepository = new FakeUsersRepository();
-    const fakeHashProvider = new FakeHashProvider();
-
-    const authenticateUser = new AuthenticateUserService(
-      fakeUsersRepository,
-      fakeHashProvider,
-    );
-
     await expect(
       authenticateUser.execute({
         email: 'johndoe@exemple.com',
@@ -60,18 +52,6 @@ describe('AuthenticateUser', () => {
   });
 
   it('should not be able to authenticate with wrong password', async () => {
-    const fakeUsersRepository = new FakeUsersRepository();
-    const fakeHashProvider = new FakeHashProvider();
-
-    const createUser = new CreateUserService(
-      fakeUsersRepository,
-      fakeHashProvider,
-    ); // Criar o usuário para fazer o teste
-    const authenticateUser = new AuthenticateUserService(
-      fakeUsersRepository,
-      fakeHashProvider,
-    );
-
     // Criando o usuário
     await createUser.execute({
       name: 'john doe',
@@ -80,7 +60,7 @@ describe('AuthenticateUser', () => {
     });
 
     // espera que user tenha um id
-    expect(
+    await expect(
       authenticateUser.execute({
         email: 'johndoe@exemple.com',
         password: 'wrong-password',
