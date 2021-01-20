@@ -47,6 +47,21 @@ describe('CreateAppointment', () => {
     ).rejects.toBeInstanceOf(AppError);
     // espera que o resultado seja uma instancia de AppError
   });
+
+  it('should not be able to create an appointments on a past date', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 4, 10, 12).getTime();
+    });
+
+    await expect(
+      createAppointment.execute({
+        date: new Date(2020, 4, 10, 11),
+        user_id: '123456',
+        provider_id: '123456',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+    // espera que o resultado seja uma instancia de AppError
+  });
 });
 
 // yarn test src/modules/appointments/services/CreateAppointmentService.spec.ts
