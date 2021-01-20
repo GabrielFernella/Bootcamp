@@ -1,27 +1,40 @@
 import 'reflect-metadata';
 
 import AppError from '@shared/errors/AppError';
+
 import FakeMailProvider from '@shared/container/providers/MailProvider/fakes/FakeMailProvider';
+
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
+
 import SendForgotPasswordEmailService from './SendForgotPasswordEmailService';
+
 import FakeUserTokensRepository from '../repositories/fakes/FakeUserTokensRepository';
 
 let fakeUsersRepository: FakeUsersRepository;
+
 let fakeMailProvider: FakeMailProvider;
+
 let fakeUserTokensRepository: FakeUserTokensRepository;
+
 let sendForgotPasswordEmail: SendForgotPasswordEmailService;
 
 describe('SendForgotPasswordEmail', () => {
   // Dispara uma função automática antes de cada um dos testes
+
   // é uma forma mais simples de instanciar as classes para não ficar com o código repetido
+
   beforeEach(() => {
     fakeUsersRepository = new FakeUsersRepository();
+
     fakeMailProvider = new FakeMailProvider();
+
     fakeUserTokensRepository = new FakeUserTokensRepository();
 
     sendForgotPasswordEmail = new SendForgotPasswordEmailService(
       fakeUsersRepository,
+
       fakeMailProvider,
+
       fakeUserTokensRepository,
     );
   });
@@ -31,7 +44,9 @@ describe('SendForgotPasswordEmail', () => {
 
     await fakeUsersRepository.create({
       name: 'John Doe',
+
       email: 'johndoe@exemple.com',
+
       password: '123456',
     });
 
@@ -40,6 +55,7 @@ describe('SendForgotPasswordEmail', () => {
     });
 
     // espera que user tenha um id
+
     expect(sendMail).toHaveBeenCalled();
   });
 
@@ -56,7 +72,9 @@ describe('SendForgotPasswordEmail', () => {
 
     const user = await fakeUsersRepository.create({
       name: 'John Doe',
+
       email: 'johndoe@exemple.com',
+
       password: '123456',
     });
 
@@ -69,4 +87,5 @@ describe('SendForgotPasswordEmail', () => {
 });
 
 // yarn test src/modules/users/services/SendForgotPasswordEmailService.spec.ts
+
 // RED -> GREEN -> REFACTOR
