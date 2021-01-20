@@ -1,4 +1,5 @@
 // Representação de como um dado é salvo na aplicação
+
 import {
   Entity,
   Column,
@@ -12,9 +13,13 @@ import {
 import User from '@modules/users/infra/typeorm/entities/User';
 
 /*
+
   Um para um (OneToOne)
+
   Um para * (OneToMany)
+
   * para * (ManyToMany)
+
 */
 
 @Entity('appointments') // insira o nome da tabela
@@ -29,6 +34,13 @@ class Appointment {
   @ManyToOne(() => User) // Funcição de qual model o ORM precisa usar
   @JoinColumn({ name: 'provider_id' })
   provider: User;
+
+  @Column()
+  user_id: string;
+
+  @ManyToOne(() => User) // Funcição de qual model o ORM precisa usar
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column('timestamp with time zone')
   date: Date;

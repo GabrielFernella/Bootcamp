@@ -14,6 +14,7 @@ Acesso ao Repositório
 // interface Recebimento de dados da requisição
 interface IRequest {
   provider_id: string;
+  user_id: string;
   date: Date;
 }
 
@@ -21,11 +22,15 @@ interface IRequest {
 class CreateAppointmentService {
   // Através de injeção de dependência enviamos nosso ApppoinrmentRepository do typeorm, assim podemos ter as funções criadas para utilizarmos aqui
   constructor(
-    @inject('AppointmentRepository')
+    @inject('AppointmentsRepository')
     private appointmentsRepository: IAppointmentsRepository, // importamos essa interface para termos uma noção dos métodos contidos na classe AppointmentsRepository
   ) {}
 
-  public async execute({ provider_id, date }: IRequest): Promise<Appointment> {
+  public async execute({
+    provider_id,
+    user_id,
+    date,
+  }: IRequest): Promise<Appointment> {
     // Pegando o valor inicial da hora
     const appointmentDate = startOfHour(date);
 
@@ -40,6 +45,7 @@ class CreateAppointmentService {
     const appointment = await this.appointmentsRepository.create({
       // Passa os valores para a memória
       provider_id,
+      user_id,
       date: appointmentDate,
     });
 

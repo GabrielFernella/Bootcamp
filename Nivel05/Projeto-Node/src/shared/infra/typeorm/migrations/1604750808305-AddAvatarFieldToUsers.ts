@@ -5,9 +5,12 @@ export default class AddAvatarFieldToUsers1604750808305
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.addColumn(
       'users',
+
       new TableColumn({
         name: 'avatar',
+
         type: 'varchar',
+
         isNullable: true, // caso os dados já tivessem em um banco, e fosse obrigatório, vc teria problemas posteriormente, seria necessário criar uma query para editar todos os dados antigos
       }),
     );
