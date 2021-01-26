@@ -1,4 +1,4 @@
-// Esse arquivo funciona como uma interface para que quando utilizar esses mpetodos em serviços, teremos que respeitar os métodos da interface
+// Esse arquivo funciona como uma interface para que quando utilizar esses métodos em serviços, teremos que respeitar os métodos da interface
 import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment';
 import ICreateAppointmentDTO from '../dtos/ICreateAppointmentDTO';
 import IFindAllInDayFromProviderDTO from '../dtos/IFindAllInDayFromProviderDTO';

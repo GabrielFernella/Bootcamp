@@ -36,6 +36,7 @@ describe('ListProviderDayAvailability', () => {
       day: 20,
     });
 
+    // Essa função espera que retorna um objeto de array com os seguintes resultados
     expect(availability).toEqual(
       expect.arrayContaining([
         { hour: 8, available: false },
