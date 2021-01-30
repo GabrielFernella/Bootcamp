@@ -86,6 +86,7 @@ describe('ListProviderMonthAvailability', () => {
       month: 5,
     });
 
+    // Verifica se o array contêm os seguinte valores (Verificando os dias que tenho disponível)
     expect(availability).toEqual(
       expect.arrayContaining([
         { day: 19, available: true },

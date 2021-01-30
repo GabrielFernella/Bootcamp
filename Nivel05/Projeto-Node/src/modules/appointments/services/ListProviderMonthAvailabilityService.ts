@@ -34,10 +34,11 @@ class ListProviderMonthAvailabilityService {
       },
     );
 
+    // Busca todos os dias do mes
     const numberOfDaysInMonth = getDaysInMonth(new Date(year, month - 1));
 
     const eachDayArray = Array.from(
-      // Retorna um array com todos os dias do mes
+      // Cria um array com o tamanho de todos dos dias do mes e add um index
       { length: numberOfDaysInMonth },
       (_, index) => index + 1,
     );
@@ -50,7 +51,7 @@ class ListProviderMonthAvailabilityService {
 
       return {
         day,
-        available: appointmentsInDay.length < 10,
+        available: appointmentsInDay.length < 10, // Verificando se tem algum horário disponível
       };
     });
 

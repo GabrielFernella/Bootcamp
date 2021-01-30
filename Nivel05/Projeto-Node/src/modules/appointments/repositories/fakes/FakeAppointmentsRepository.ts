@@ -37,6 +37,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
     return appointments;
   }
 
+  // Essa função verifica se possui um dia disponível e valida para o retorno
   public async findAllInDayFromProvider({
     provider_id,
     day,

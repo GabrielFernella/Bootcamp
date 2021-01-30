@@ -25,6 +25,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
     return findAppointment;
   }
 
+  // Função para buscar os dias dispiníveis no mes
   public async findAllInMonthFromProvider({
     provider_id,
     month,
@@ -37,8 +38,11 @@ class AppointmentsRepository implements IAppointmentsRepository {
       where: {
         provider_id,
         date: Raw(
+          // Raw é uma função do TypeORM para vc poder escrever um texto que será passado para o postgres
+          // Esse valor é permitido como uma função do próprio banco de dados
           dateFieldName =>
             `to_char(${dateFieldName}, 'MM-YYYY') = '${parsedMonth}-${year}'`,
+          // converte uma informação que não é do tipo texto para texto
         ),
       },
     });
