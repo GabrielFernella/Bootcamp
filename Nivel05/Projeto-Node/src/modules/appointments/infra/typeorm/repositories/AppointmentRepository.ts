@@ -31,7 +31,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
     month,
     year,
   }: IFindAllInMonthFromProviderDTO): Promise<Appointment[]> {
-    // convertendo a string de datas para dois digitos exe: 01,02,03...
+    // convertendo a string de datas para dois dígitos exe: 01,02,03...
     const parsedMonth = String(month).padStart(2, '0');
 
     const appointments = await this.ormRepository.find({

@@ -37,17 +37,20 @@ class ListProviderDayAvailabilityService {
       },
     );
 
+    // representando o horário que começa a valer os agendamentos do dia
     const hourStart = 8;
 
     const eachHourArray = Array.from(
       // Criando um tipo de array com to tamanho de 10 e seu indice [1,2,3,4,...]
       { length: 10 },
-      (_, index) => index + hourStart,
+      (_, index) => index + hourStart, // somando com o primeiro horário do dia até as 17h
     );
 
     const currentDate = new Date(Date.now());
 
+    // Percorre o array de horário
     const availability = eachHourArray.map(hour => {
+      // buscando um appointment deste horário
       const hasAppointmentInHour = appointments.find(
         appointment => getHours(appointment.date) === hour,
       );
