@@ -5,23 +5,16 @@ import { Router } from 'express';
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated'; // Middleware de autenticação
 
 import AppointmentController from '../controllers/AppointmentsController';
+import ProviderAppointmentsController from '../controllers/ProviderAppointmentsController';
 
 const appointmentsRouter = Router();
 
 const appointmentsController = new AppointmentController();
+const providerAppointmentsController = new ProviderAppointmentsController();
 
 appointmentsRouter.use(ensureAuthenticated); // Middleware executa antes das seguintes rotas
 
-/* appointmentsRouter.get('/', async (request, response) => {
-
-  const appointment = await appointmentsRepository.find(); // buscando todos os dados de appointment
-
-
-
-  return response.json(appointment);
-
-}); */
-
 appointmentsRouter.post('/', appointmentsController.create);
+appointmentsRouter.get('/me', providerAppointmentsController.index);
 
 export default appointmentsRouter;
