@@ -3,18 +3,23 @@
 import 'reflect-metadata';
 
 import AppError from '@shared/errors/AppError'; // Arquivo de tratativa de erros
+import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import CreateAppointmentService from './CreateAppointmentService'; // Importamos nosso arquivo de Services para que possamos buscar nossos services
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
+let fakeNotificationsRepository: FakeNotificationsRepository;
+
 let createAppointment: CreateAppointmentService;
 
 // describe cria uma categoria de testes
 describe('CreateAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository(); // utilize o fakeRepository e passe para o contructor
+    fakeNotificationsRepository = new FakeNotificationsRepository();
     createAppointment = new CreateAppointmentService(
       fakeAppointmentsRepository,
+      fakeNotificationsRepository,
     );
   });
 
