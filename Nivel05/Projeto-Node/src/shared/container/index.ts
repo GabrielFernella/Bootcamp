@@ -3,6 +3,7 @@
 import { container } from 'tsyringe';
 
 import '@modules/users/providers'; // alterado no eslint
+
 import './providers';
 
 import IAppointmentsRepository from '@modules/appointments/repositories/IAppointmentsRepository';
@@ -15,17 +16,21 @@ import IUserTokensRepository from '@modules/users/repositories/IUserTokensReposi
 import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
 // Utilizamos o singleton que instancie nossa classe uma única vez durante todo o siclo de vida da aplicação
+
 container.registerSingleton<IAppointmentsRepository>( // A interface utilizada para guia
   'AppointmentsRepository', // Como deve ser chamada o inject
+
   AppointmentsRepository, // O respectivo repositório de referencia
 );
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
+
   UsersRepository,
 );
 
 container.registerSingleton<IUserTokensRepository>(
   'UserTokensRepository',
+
   UserTokensRepository,
 );
