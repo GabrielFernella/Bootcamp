@@ -4,12 +4,16 @@
 2. mongodb://192.168.56.101:27017
 3. yarn add mongodb
 4. yarn add @types/mongodb -D
+5. yarn add celebrate (biblioteca de validação)
+6. yarn add -D @types/hapi\_\_joi (esse pacote é um complemento celebrate, para validação(são dois underlines))
 
 =============================================================================================================
 
 ## Processos
 
-1. Estrutura básica para funcionalidades
+1. Crie o container do seu banco de dados no docker
+2. Crie a conexão com o banco de dados mongodb no arquivo de ormconfig
+3. instale as dependências do celebrate e configure a tratativas de erros no arquivo server.ts
 
 =============================================================================================================
 
