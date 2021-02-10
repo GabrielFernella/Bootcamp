@@ -1,4 +1,5 @@
 import 'reflect-metadata'; // precisa desse recurso do TypeORM para entender algumas sintaxe
+import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express'; // Utilizando no middleware de erros
 import 'express-async-errors'; // para que nosso middleware de erros entenda métodos async

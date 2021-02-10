@@ -6,6 +6,7 @@
 4. yarn add @types/mongodb -D
 5. yarn add celebrate (biblioteca de validação)
 6. yarn add -D @types/hapi\_\_joi (esse pacote é um complemento celebrate, para validação(são dois underlines))
+7. yarn add dotenv
 
 =============================================================================================================
 
