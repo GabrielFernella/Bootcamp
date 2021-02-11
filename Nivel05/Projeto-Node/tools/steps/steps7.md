@@ -1,5 +1,7 @@
 ## Pacotes Iniciais
 
+// 11:00
+
 1. docker run --name mongo -p 27017:27017 -d -t mongo
 2. mongodb://192.168.56.101:27017
 3. yarn add mongodb
@@ -8,6 +10,7 @@
 6. yarn add -D @types/hapi\_\_joi (esse pacote é um complemento celebrate, para validação(são dois underlines))
 7. yarn add dotenv
 8. yarn add class-transformer (Conseguimos manipular as informações que nossa API irá expor)
+9. yarn add aws-sdk (para utilizar os serviços da amazon SES)
 
 =============================================================================================================
 
