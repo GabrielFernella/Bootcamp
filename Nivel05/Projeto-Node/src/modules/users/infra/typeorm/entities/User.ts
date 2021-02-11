@@ -1,4 +1,5 @@
 // Representação de como um dado é salvo na aplicação
+
 import {
   Entity,
   Column,
@@ -6,6 +7,8 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm'; // Um model que será salvo no banco de dados
+
+import { Exclude, Expose } from 'class-transformer'; // biblioteca para editar campos das classes
 
 @Entity('users') // insira o nome da tabela
 class User {
@@ -19,6 +22,7 @@ class User {
   email: string;
 
   @Column()
+  @Exclude()
   password: string;
 
   @Column()
@@ -29,6 +33,13 @@ class User {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @Expose({ name: 'avatar_url' })
+  getAvatarUrl(): string | null {
+    return this.avatar
+      ? `${process.env.APP_API_URL}/files/${this.avatar}`
+      : null;
+  }
 }
 
 export default User;
