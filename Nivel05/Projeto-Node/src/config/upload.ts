@@ -1,11 +1,9 @@
-import multer, { StorageEngine } from 'multer'; // middleware de manuseio de arquivos
-import crypto from 'crypto'; // server para gerar hash e criptografia (que será passado no nome)
 import path from 'path';
-
-const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp'); // caminho dos arquivos
+import crypto from 'crypto';
+import multer, { StorageEngine } from 'multer';
 
 interface IUploadConfig {
-  driver: 's3' | 'disk';
+  driver: 'disk' | 's3';
 
   tmpFolder: string;
   uploadsFolder: string;
@@ -16,11 +14,14 @@ interface IUploadConfig {
 
   config: {
     disk: {};
+
     aws: {
       bucket: string;
     };
   };
 }
+
+const tmpFolder = path.resolve(__dirname, '..', '..', 'tmp');
 
 export default {
   driver: process.env.STORAGE_DRIVER,
@@ -30,9 +31,9 @@ export default {
 
   multer: {
     storage: multer.diskStorage({
-      destination: tmpFolder, // Destino dos arquivos
+      destination: tmpFolder,
       filename(request, file, callback) {
-        const filehash = crypto.randomBytes(10).toString('hex'); // gerando nome randomigo
+        const filehash = crypto.randomBytes(10).toString('hex');
         const fileName = `${filehash}-${file.originalname}`;
 
         return callback(null, fileName);
