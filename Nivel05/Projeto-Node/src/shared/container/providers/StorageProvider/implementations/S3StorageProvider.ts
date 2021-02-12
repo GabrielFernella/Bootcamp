@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import mime from 'mime';
 import aws, { S3 } from 'aws-sdk';
 import uploadConfig from '@config/upload';
 import IStorageProvider from '../models/IStorageProvider';
@@ -16,27 +17,35 @@ class DiskStorageProvider implements IStorageProvider {
   public async saveFile(file: string): Promise<string> {
     const originalPath = path.resolve(uploadConfig.tmpFolder, file); // Origem do arquivo
 
-    const fileContent = fs.promises.readFile(originalPath, {
-      encoding: 'utf-8',
-    });
+    const contentType = mime.getType(originalPath);
+    if (!contentType) {
+      throw new Error('File not found');
+    }
 
-    this.client.putObject({
-      Bucket: 'app-gobarber-2',
-      Key: file,
-      ACL: '',
-    });
+    const fileContent = await fs.promises.readFile(originalPath);
+
+    await this.client
+      .putObject({
+        Bucket: uploadConfig.config.aws.bucket,
+        Key: file,
+        ACL: 'public-read',
+        Body: fileContent,
+        ContentType: contentType,
+      })
+      .promise();
+
+    await fs.promises.unlink(originalPath);
+
+    return file;
   }
 
   public async deleteFile(file: string): Promise<void> {
-    const filePath = path.resolve(uploadConfig.uploadsFolder, file);
-
-    try {
-      await fs.promises.stat(filePath); // Busca as informações do arquivo, se não retornar nada, ele dá erro
-    } catch {
-      return;
-    }
-
-    await fs.promises.unlink(filePath); // Deleta o arquivo
+    await this.client
+      .deleteObject({
+        Bucket: uploadConfig.config.aws.bucket,
+        Key: file,
+      })
+      .promise();
   }
 }
 

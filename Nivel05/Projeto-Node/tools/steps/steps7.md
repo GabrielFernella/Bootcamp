@@ -11,6 +11,7 @@
 7. yarn add dotenv
 8. yarn add class-transformer (Conseguimos manipular as informações que nossa API irá expor)
 9. yarn add aws-sdk (para utilizar os serviços da amazon SES)
+10. yarn add mime (para trabalhar com extensões diferentes de arquivos)
 
 =============================================================================================================
 
